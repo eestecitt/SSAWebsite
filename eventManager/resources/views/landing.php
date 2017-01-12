@@ -12,7 +12,7 @@
         <!-- Site Properities -->
         <title>EESTech Challenge 2016-2017</title>
 
-        <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+        <link rel="icon" type="image/png" href="assets/images/favicon_ec.png" />
         <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
         <link rel="stylesheet" type="text/css" href="assets/lib/content-tools/content-tools.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/eca.css">
