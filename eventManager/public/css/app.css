@@ -2,13 +2,15 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-.ui.header {
+.ui.header, .ui.message .header {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
 .ui.card>.content>.header, .ui.cards>.card>.content>.header:not(.ui) {
   font-family: 'Roboto Condensed', sans-serif;
 }
+
+
 
 /* ec-blue */
 
