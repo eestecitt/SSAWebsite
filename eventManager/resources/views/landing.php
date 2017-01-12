@@ -17,6 +17,7 @@
         <link rel="stylesheet" type="text/css" href="assets/lib/content-tools/content-tools.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/eca.css">
         <link rel="stylesheet" type="text/css" href="css/app.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     </head>
 
     <body ng-app="ecaApp" ng-controller="LandingLayoutController">
