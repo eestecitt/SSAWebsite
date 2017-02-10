@@ -42,6 +42,7 @@ Route::group(array('prefix' => 'api/v1'), function() {
     Route::post('auth/login', 'Auth\AuthController@postLogin');
     Route::get('auth/logout', 'Auth\AuthController@getLogout');
     Route::get('auth/user', 'Auth\AuthController@getUser');
+    Route::get('lcs', 'AdminController@lcsAPI');
 
     Route::resource('member', 'MemberController',
                     ['except' => ['index', 'show', 'create']]);
@@ -66,9 +67,20 @@ Route::group(array('prefix' => 'admin'), function() {
     Route::post('/login', 'Auth\AuthController@postLogin');
     Route::get('/logout', 'Auth\AuthController@getLogout');
 
+
     Route::get('/', 'AdminController@index');
     Route::get('/members', 'AdminController@members');
     Route::get('/teams', 'AdminController@teams');
+
+    Route::get('/lcs', 'AdminController@lcs');
+    Route::get('/newLC', 'AdminController@newLC');
+    Route::post('/createLC', 'AdminController@createLC');
+    Route::get('/removeLC/{id}', 'AdminController@removeLC');
+    Route::get('/showLC/{id}', 'AdminController@showLC');
+
+    Route::get('/removeMember/{id}', 'AdminController@removeMember');
+
+    Route::get('/removeTeam/{id}', 'AdminController@removeTeam');
 
     Route::get('/members/csv', 'AdminController@membersCsv');
     Route::get('/teams/csv', 'AdminController@teamsCsv');

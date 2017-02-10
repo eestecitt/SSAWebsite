@@ -10,6 +10,12 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+/*File upload*/
+
+.fileInput {
+  display: none;
+}
+
 
 
 /* ec-blue */

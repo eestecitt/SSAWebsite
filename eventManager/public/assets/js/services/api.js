@@ -22,6 +22,14 @@ angular.module('ecaApp')
                     'save': { method:'POST'}
                 }
             ),
+            LCs: $resource('/api/v1/lcs',
+                {
+                },
+                {
+                    'get':    { method:'GET' },
+                    'query':  { method:'GET', isArray:true }
+                }
+            ),
             Idea: $resource('/api/v1/idea/:ideaId',
                 {
                     'ideaId': '@id'

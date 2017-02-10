@@ -9,8 +9,10 @@ use Gate;
 use App\Group;
 use App\Member;
 use App\Idea;
+use App\LC;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Event;
 
 class AdminController extends Controller
 {
@@ -21,7 +23,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        if (Gate::denies('admin')) {
+        if (Gate::allows('ambassador')) {
+          $user = Auth::user();
+          $path = "/admin/showLC/".$user->ambassador->id;
+          return redirect($path);
+        } else if (Gate::denies('admin')) {
             Auth::logout();
             return redirect('/admin/login');
         }
@@ -30,11 +36,13 @@ class AdminController extends Controller
         $groups = Group::count();
         $members = Member::count();
         $ideas = Idea::count();
+        $lcs = LC::count();
 
         return view('admin.dashboard', [
             'groups' => $groups,
             'members' => $members,
-            'ideas' => $ideas
+            'ideas' => $ideas,
+            'lcs' => $lcs
         ]);
     }
 
@@ -53,6 +61,72 @@ class AdminController extends Controller
         $members = Member::with('group')->get();
 
         return view('admin.members', [ 'members' => $members ]);
+    }
+
+    public function lcs()
+    {
+      if (Gate::denies('admin')) {
+          Auth::logout();
+          return redirect('/admin/login');
+      }
+
+      $lcs = LC::all();
+
+      return view('admin.lcs', [ 'lcs' => $lcs ]);
+    }
+
+    public function showLC($id) {
+      $lc = LC::findOrFail($id);
+      if (Gate::denies('ambassador', [$lc])) {
+          Auth::logout();
+          return redirect('/admin/login');
+      }
+
+      return view('admin.lc', ['lc' => $lc, 'members' => $lc->members, 'groups' => $lc->groups]);
+    }
+
+    public function lcsAPI()
+    {
+      $lcs = LC::all();
+      return response()->json(['lcs'=> $lcs]);
+    }
+
+    public function createLC(Request $request)
+    {
+      if (Gate::denies('admin')) {
+          Auth::logout();
+          return redirect('/admin/login');
+      }
+
+      $lc = LC::create([
+          'name' => $request->input('name')
+      ]);
+      $email = $request->input('email');
+      $ambassador = Member::all()->filter( function ($member) use ($email) {
+        return $member->email == $email;
+      });
+      $ambassador = $ambassador->first();
+      if ($ambassador) {
+        $lc->ambassador()->save($ambassador);
+      }
+
+      return redirect('/admin/lcs');
+    }
+
+    public function removeLC($id)
+    {
+      if (Gate::denies('admin')) {
+          Auth::logout();
+          return redirect('/admin/login');
+      }
+
+      LC::destroy($id);
+      return redirect('/admin/lcs');
+    }
+
+    public function newLC()
+    {
+      return view('admin.newLC');
     }
 
     public function membersCsv()
@@ -82,9 +156,31 @@ class AdminController extends Controller
             return redirect('/admin/login');
         }
 
-        $teams = Group::with('idea')->get();
+        $teams = Group::all();
 
         return view('admin.teams', [ 'teams' => $teams ]);
+    }
+
+    public function removeTeam($id)
+    {
+      if (Gate::denies('admin')) {
+          Auth::logout();
+          return redirect('/admin/login');
+      }
+
+      Group::destroy($id);
+      return redirect('/admin/teams');
+    }
+
+    public function removeMember($id)
+    {
+      if (Gate::denies('admin')) {
+          Auth::logout();
+          return redirect('/admin/login');
+      }
+
+      Member::destroy($id);
+      return redirect('/admin/members');
     }
 
     public function teamsCsv()

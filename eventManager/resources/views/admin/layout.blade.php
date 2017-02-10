@@ -9,8 +9,9 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>ECA Admin | @yield('title')</title>
+    <title>EESTech Challenge | @yield('title')</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -35,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">ECA Admin Panel</a>
+          <a class="navbar-brand" href="#">EESTech Challenge Admin Panel</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -65,6 +66,9 @@
             </li>
             <li class="{{ Request::is('admin/teams') ? 'active' : '' }}">
              <a href="/admin/teams">Teams</a>
+            </li>
+            <li class="{{ Request::is('admin/lcs') ? 'active' : '' }}">
+             <a href="/admin/lcs">LCs</a>
             </li>
           </ul>
           @show

@@ -1,26 +1,20 @@
 angular.module('ecaApp')
 .controller('teamController', ['$scope', '$rootScope', '$http', '$state', 'User', 'API',
     function($scope, $rootScope, $http, $state, User, API) {
-        $http.get('https://restcountries-v1.p.mashape.com/region/europe', {headers: {
-            'X-Mashape-Key': 'yhNwA5NusOmshGvY4U4Q0WBGXQS4p17AkD7jsnzl6zSzE44h5w',
-            'Accept': 'application/json'
-        }}).then(function(response) {
-            $scope.countries = response.data;
-        });
 
         $scope.member1 = {
             first_name: '',
             last_name: '',
             birthdate: '',
             sex:'',
-            country: '',
             faculty: '',
-            study_level: '',
+            tshirt: '',
+            number: '',
             years_study: '',
             email: '',
             password: '',
             password_confirmation: '',
-            agrees: false
+            agrees: false,
         }
 
         $scope.submitted = false;
@@ -30,7 +24,9 @@ angular.module('ecaApp')
             if ($scope.user.group)
                 API.Group.get({ groupId: $scope.user.group.id }, function(response) {
                     $scope.team = response;
+                    console.log(response);
                     $rootScope.teamName = $scope.team.name;
+                    $rootScope.lcName = $scope.team.lc.name;
                 });
             else
                 $rootScope.teamName = '?';
@@ -68,6 +64,7 @@ angular.module('ecaApp')
             $scope.submitted3 = false;
             $('#edit-user-modal').modal('show');
         }
+
     }
 
 ])

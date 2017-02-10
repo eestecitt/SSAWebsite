@@ -18,19 +18,51 @@ class Member extends Model implements AuthenticatableContract,
 
     protected $table = 'members';
 
-    protected $fillable = ['first_name', 'last_name', 'birthdate', 'sex', 'email', 'password', 'country', 'years_study', 'study_level', 'uni','faculty', 'department', 'phone','image', 'tshirt','cv', 'city','activated'];
     protected $hidden = ['password', 'remember_token'];
+
+    protected $fillable = [
+      'first_name',
+      'last_name',
+      'birthdate',
+      'sex', 'email',
+      'password',
+      'country',
+      'years_study',
+      'study_level',
+      'uni',
+      'faculty',
+      'department',
+      'number',
+      'image',
+      'tshirt',
+      'cv',
+      'city',
+      'activated',
+      'hasCV'
+    ];
 
     protected $casts = [
         'admin' => 'boolean',
-        'judge' => 'boolean',
+        'hasCV' => 'boolean',
+        'ambassador' => 'boolean'
     ];
 
     /**
-     * Get the groups where this member participates.
+     * Get the group where this member participates.
      */
     public function group()
     {
-        return $this->belongsTo('App\Group');
+      return $this->belongsTo('App\Group');
     }
+
+    public function ambassador()
+    {
+      return $this->belongsTo('App\LC', 'l_c_id');
+    }
+
+    public function getLcAttribute()
+    {
+      return $this->group->lc;
+    }
+
 }

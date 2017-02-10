@@ -18,11 +18,11 @@
           <th>First name</th>
           <th>Last name</th>
           <th>Email</th>
-          <th>Country</th>
+          <th>LC</th>
           <th>Team</th>
           <th>Registered</th>
-          <th>Birthdate</th>
-          <th>Faculty/School</th>
+          <th>Faculty</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -31,11 +31,19 @@
           <td>{{ $member->first_name }}</td>
           <td>{{ $member->last_name }}</td>
           <td>{{ $member->email }}</td>
-          <td>{{ $member->country }}</td>
+          <td>
+            @if ($member->lc)
+              {{ $member->lc->name }}
+            @else
+              -
+            @endif
+          </td>
           <td>{{ $member->group->name }}</td>
           <td>{{ $member->created_at }}</td>
-          <td>{{ $member->birthdate }}</td>
           <td>{{ str_limit($member->faculty, 50) }}</td>
+          <td>
+            <button><a href="/admin/removeMember/{{ $member->id }}">Remove</a></button>
+          </td>
         </tr>
         @endforeach
       </tbody>

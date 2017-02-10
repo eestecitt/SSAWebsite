@@ -11,6 +11,7 @@ use Validator;
 use App\Event;
 use App\Group;
 use App\Member;
+use App\LC;
 use App\Config;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -34,7 +35,7 @@ class GroupController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store (Request $request)
     {
         $cfg = Config::first();
 
@@ -45,6 +46,7 @@ class GroupController extends Controller
 
         $v = Validator::make($request->all(), [
             'name' => 'required|max:255|unique:groups',
+            'lc' => 'required|max:255',
             'members' => 'required|array',
         ]);
 
@@ -55,15 +57,13 @@ class GroupController extends Controller
             $v->sometimes("members.$n.last_name", 'required|max:255', function($input) use($n) { return count($input->members >= $n); });
             $v->sometimes("members.$n.birthdate", 'required|date', function($input) use($n) { return count($input->members >= $n); });
             $v->sometimes("members.$n.sex", 'required|in:m,f,o', function($input) use($n) { return count($input->members >= $n); });
-            $v->sometimes("members.$n.country", 'required', function($input) use($n) { return count($input->members >= $n); });
-            $v->sometimes("members.$n.uni", 'required|max:255', function($input) use($n) { return count($input->members >= $n); });
             $v->sometimes("members.$n.faculty", 'required|max:255', function($input) use($n) { return count($input->members >= $n); });
             $v->sometimes("members.$n.years_study", 'required|max:255', function($input) use($n) { return count($input->members >= $n); });
-            $v->sometimes("members.$n.phone", 'required|max:20', function($input) use($n) { return count($input->members >= $n); });
-				$v->sometimes("members.$n.image", 'required|max:255', function($input) use($n) { return count($input->members >= $n); });
+            $v->sometimes("members.$n.number", 'required|max:20', function($input) use($n) { return count($input->members >= $n); });
+				    //$v->sometimes("members.$n.image", 'required|max:255', function($input) use($n) { return count($input->members >= $n); });
             $v->sometimes("members.$n.tshirt", 'required|in:S,M,L,XL,XXL', function($input) use($n) { return count($input->members >= $n); });
-            $v->sometimes("members.$n.cv", 'required|max:255', function($input) use($n) { return count($input->members >= $n); });
-            $v->sometimes("members.$n.city", 'required|in:1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16', function($input) use($n) { return count($input->members >= $n); });
+            //$v->sometimes("members.$n.cv", 'required|max:255', function($input) use($n) { return count($input->members >= $n); });
+            //$v->sometimes("members.$n.city", 'required|in:1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16', function($input) use($n) { return count($input->members >= $n); });
             //$v->sometimes("members.$n.cv", 'required|mimes:pdf', function($input) use($n) { return count($input->members >= $n); });
         }
 
@@ -84,14 +84,20 @@ class GroupController extends Controller
                 if (!Auth::once(['email' => $m['email'], 'password' => $m['password']])) {
                     return response()->json([
                             "msg" => "User already exists, and password is incorrect",
-                            "offender" => $m['email']
+                            "offender" => $m['email'],
+                            "lcInt" => (int) ($request->only('lc')['lc']),
+                            "lc" => $request->only('lc')
                         ], 400);
                 }
             }
         }
 
+        $lc = LC::find((int) ($request->only('lc')['lc']));
         $group = new Group($request->only('name'));
-        $group->save();
+        $lc->groups()->save($group);
+        //$lc = LC::where('name', $request->only('lc'))->first();
+
+
 
         // create or register to the group all the members
         foreach ($request->members as $m) {
@@ -109,12 +115,16 @@ class GroupController extends Controller
             }
         }
 
-        Mail::send('emails.admin.groupCreated', ['group' => $group], function ($m) use ($group, $cfg) {
+/*        Mail::send('emails.admin.groupCreated', ['group' => $group], function ($m) use ($group, $cfg) {
             $m->from('eca-noreply@eestec.net', 'EESTEC Android Competition');
             $m->to($cfg->admin_email, 'ECA Admin')->subject('New group registered!');
-        });
+        }); */
 
-        return response()->json($group);
+        return response()->json([
+          "group" => $group,
+          "lcInt" => (int) $request->only('lc'),
+          "lc" => $request->only('lc')
+        ]);
     }
 
     /**
@@ -128,6 +138,7 @@ class GroupController extends Controller
         $group = Group::with('members')
                     ->with('scores')
                     ->with('idea')
+                    ->with('lc')
                     ->findOrFail($id);
         return response()->json($group);
     }

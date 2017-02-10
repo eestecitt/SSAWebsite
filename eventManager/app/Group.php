@@ -19,6 +19,14 @@ class Group extends Model
     }
 
     /**
+     * Get the LC where this member participates.
+     */
+    public function lc()
+    {
+      return $this->belongsTo(LC::class, 'l_c_id');
+    }
+
+    /**
      * Get the scores issued for this group.
      */
     public function scores()

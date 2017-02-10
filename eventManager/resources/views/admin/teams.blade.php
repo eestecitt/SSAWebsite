@@ -16,16 +16,25 @@
       <thead>
         <tr>
           <th>Team Name</th>
+          <th>LC</th>
           <th>Registered at</th>
           <th>Members</th>
           <th>Idea Name</th>
           <th>Idea Repo</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         @foreach ($teams as $team)
         <tr>
           <td>{{ $team->name }}</td>
+          <td>
+            @if ($team->lc)
+              {{ $team->lc->name}}
+            @else
+              -
+            @endif
+          </td>
           <td>{{ $team->created_at }}</td>
           <td>
             @foreach ($team->members as $member)
@@ -47,6 +56,9 @@
             @else
               -
             @endif
+          </td>
+          <td>
+            <button><a href="/admin/removeTeam/{{ $team->id }}">Remove</a></button>
           </td>
         </tr>
         @endforeach

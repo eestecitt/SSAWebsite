@@ -25,7 +25,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(GateContract $gate)
     {
         parent::registerPolicies($gate);
-        
+
 
         $gate->before(function ($user, $ability) {
             if ($user->admin) {
@@ -41,6 +41,14 @@ class AuthServiceProvider extends ServiceProvider
         // ContentTools
         $gate->define('save-page', function($user) {
             return $user->admin;
+        });
+
+        $gate->define('ambassador_of_lc', function ($user, $lc) {
+            return $lc->ambassador === $user;
+        });
+
+        $gate->define('ambassador', function ($user) {
+            return $user->ambassador;
         });
 
         // Config
