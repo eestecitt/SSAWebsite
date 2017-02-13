@@ -25,8 +25,10 @@ class AdminController extends Controller
     {
         if (Gate::allows('ambassador')) {
           $user = Auth::user();
-          $path = "/admin/showLC/".$user->ambassador->id;
-          return redirect($path);
+          if ($user->ambassador) {
+            $path = "/admin/showLC/".$user->ambassador->id;
+            return redirect($path);
+          }
         } else if (Gate::denies('admin')) {
             Auth::logout();
             return redirect('/admin/login');
