@@ -22,13 +22,13 @@
 					  </div>
 					</div>
 					<div class="field">
-						<label>LC</label>
+						<label>City</label>
 						<select name="lc" placeholder="City" required ng-model="lc">
 							<option value="">Select your City</option>
 							<option ng-repeat="lc in lcs.lcs" value="{{lc.id}}">{{lc.name}}</option>
 						</select>
 						<div class="ui pointing red basic label" ng-show="(nameForm.lc.$dirty || submitted)  && nameForm.lc.$error.required">
-								Gender is required!
+								City is required!
 						</div>
 					</div>
 				</form>
