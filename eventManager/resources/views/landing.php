@@ -30,6 +30,7 @@
                     <div class="right small menu">
                         <a ui-sref="home" class="item">Home</a>
                         <a ng-click="scrollTo('cities')" class="item">Cities</a>
+                        <a ng-click="scrollTo('sponsors')" class="item">Sponsors</a>
                         <a href="http://blog-eestechchallenge.eestec.net/" class="item">Online Seminars</a>
                         <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
                         <a href="http://eestechchallenge.eestec.net/#/faq" class="item">FAQ</a>
