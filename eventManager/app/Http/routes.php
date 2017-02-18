@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('landing');
 });
 
+Route::get('/onlineseminars', function () {
+  return redirect('http://blog-eestechchallenge.eestec.net');
+});
+
 // Password reset link request
 Route::get('password/email', 'Auth\PasswordController@getEmail');
 Route::post('password/email', 'Auth\PasswordController@postEmail');
@@ -66,7 +70,6 @@ Route::group(array('prefix' => 'admin'), function() {
 
     Route::post('/login', 'Auth\AuthController@postLogin');
     Route::get('/logout', 'Auth\AuthController@getLogout');
-
 
     Route::get('/', 'AdminController@index');
     Route::get('/members', 'AdminController@members');

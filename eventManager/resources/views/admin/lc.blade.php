@@ -12,9 +12,11 @@
         <tr>
           <th>id</th>
           <th>Name</th>
-          <th>Faculty</th>
           <th>Email</th>
+          <th>Birthdate</th>
+          <th>Faculty</th>
           <th>Phone Number</th>
+          <th>T-Shirt Size</th>
           <th>Group</th>
         </tr>
       </thead>
@@ -23,9 +25,11 @@
         <tr>
           <td>{{ $member->id }}</td>
           <td>{{ $member->first_name}} {{$member->last_name}}</td>
-          <td>{{ str_limit($member->faculty, 50) }}</td>
           <td>{{ $member->email }}</td>
+          <td>{{ $member->birthdate }}</td>
+          <td>{{ str_limit($member->faculty, 50) }}</td>
           <td>{{ $member->number }}</td>
+          <td>{{ $member->tshirt }}</td>
           <td>{{$member->group->name}}</td>
         </tr>
         @endforeach
