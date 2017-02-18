@@ -33,7 +33,7 @@
                         <a ng-click="scrollTo('sponsors')" class="item">Sponsors</a>
                         <a href="http://blog-eestechchallenge.eestec.net/" class="item">Online Seminars</a>
                         <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
-                        <a href="http://eestechchallenge.eestec.net/#/faq" class="item">FAQ</a>
+                        <a ui-sref="faq" class="item">FAQ</a>
                         <a ng-click="scrollTo('contact')" class="item">Contact</a>
                         <div class="item" ng-show="!loggedin">
                             <a ui-sref="login" class="ui ec-blue button">
@@ -82,6 +82,7 @@
                         <a ui-sref="home" class="item">Home</a>
                         <a ng-click="scrollTo('cities')" class="item">Cities</a>
                         <a href="http://blog-eestechchallenge.eestec.net/" class="item">Online Seminars</a>
+                        <a href="http://eestechchallenge.eestec.net/#/faq" class="item">FAQ</a>
                         <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
                         <a ng-click="scrollTo('contact')" class="item">Contact</a>
                     </div>
@@ -99,8 +100,9 @@
                         <div class="ui inverted link list">
                             <a ui-sref="home" class="item">Home</a>
                             <a ng-click="scrollTo('cities')" class="item">Cities</a>
+                            <a ng-click="scrollTo('sponsors')" class="item">Sponsors</a>
                             <a href="http://blog-eestechchallenge.eestec.net" class="item">Online Seminars</a>
-                            <a href="http://eestechchallenge.eestec.net/#/faq" class="item">FAQ</a>
+                            <a ui-sref="faq" class="item">FAQ</a>
                             <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
                             <a ng-click="scrollTo('contact')" class="item">Contact</a>
                             <a href="http://eestechchallenge.eestec.net/#/terms" class="item">Terms and Conditions</a>
