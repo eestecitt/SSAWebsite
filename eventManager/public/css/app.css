@@ -10,8 +10,37 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+/* My changes Christos here*/
 #sponsors {
   color: #ffffff;
+}
+
+#eestec {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#register {
+  /*background-color: #3679bd;*/
+  padding: 1% 15.5%;
+  font-size: 145%;
+}
+
+#home {
+  background-color: #ffffff;
+}
+
+#register:visited {
+  background-color: #3679bd;
+}
+
+#register:hover {
+  background-color: #51bcea;
+}
+
+#separator {
+  margin: 0em;
+  background-color: #3679bd;
 }
 
 /*File upload*/
