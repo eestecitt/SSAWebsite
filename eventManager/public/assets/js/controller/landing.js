@@ -1,6 +1,6 @@
 angular.module('ecaApp')
-.controller ('LandingLayoutController', ['$scope', '$rootScope', '$state', '$location', '$anchorScroll', 'User', 'API',
-function($scope, $rootScope, $state, $location, $anchorScroll, User, API){
+.controller ('LandingLayoutController', ['$scope', '$rootScope', '$state', '$location', '$anchorScroll', 'User', 'API', '$window',
+function($scope, $rootScope, $state, $location, $anchorScroll, User, API, $window){
 
     $rootScope.loggedin = false;
 
@@ -9,6 +9,7 @@ function($scope, $rootScope, $state, $location, $anchorScroll, User, API){
         if ($scope.user.id) {
             $rootScope.loggedin = true;
         }
+
 
         if($scope.user.admin == 1) {
             // Enable Content Tools
@@ -76,4 +77,24 @@ function($scope, $rootScope, $state, $location, $anchorScroll, User, API){
 		$location.hash(id);
      	$anchorScroll();
 	}
+
+  $scope.milica = function() {
+    $window.open("https://rs.linkedin.com/in/milica-stefanović-21a85b92");
+  }
+
+  $scope.ema = function() {
+    //$window.open("https://rs.linkedin.com/in/milica-stefanović-21a85b92");
+  }
+
+  $scope.melina = function() {
+    $window.open("https://gr.linkedin.com/in/melinatourni");
+  }
+
+  $scope.damir = function() {
+    $window.open("https://hr.linkedin.com/in/damir-kovačević-b7a80a12b");
+  }
+
+  $scope.marta = function() {
+    $window.open("https://pl.linkedin.com/in/marta-błaszczyk-9a3b91128/en");
+  }
 }])

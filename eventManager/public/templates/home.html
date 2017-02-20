@@ -54,9 +54,9 @@
 
 <section class="ui content container" data-editable data-name="about" id="about">
     <!-- editable about -->
-    <h2 class="ui header aligned center">EESTech Challenge</h2>
+    <!--<h2 class="ui header aligned center">EESTech Challenge</h2>-->
 
-    <p>Brand new competition organized by EESTEC, EESTech Challenge (EESTEC Tech Challenge), has the aim to create opportunities for European students to gain knowledge in the field of EECS and develop a professional network. The technological topic of the competition will be changed annually.</p>
+    <p><b>EESTech Challenge</b> is a brand new competition organized by EESTEC, that has the aim to create opportunities for European students to gain knowledge in the field of EECS and develop a professional network. The technological topic of the competition will be changed annually.</p>
 
     <p>In order to create as objective comeptition as possible, the EESTech Challenge Online Seminars team will organize several online seminars to make sure that everyone has the same knowledge before the Rounds. Since EESTEC emphasizes education and self-improvement, this time also we would like all of our collegues to benefit from this project by expending their knowledge.</p>
     <br />
@@ -64,6 +64,11 @@
       <div class="item" ng-show="!loggedin">
           <a ui-sref="register" class="ui ec-blue button" id="register">
               <i class="user icon"></i> Register Now!
+          </a>
+      </div>
+      <div class="item" ng-show="loggedin">
+          <a ui-sref="authed.team" class="ui ec-blue button" id="team">
+              <i class="user icon"></i> My Team
           </a>
       </div>
     </center>
@@ -127,17 +132,9 @@
         <!-- editable people -->
         <h2 class="ui header aligned center">Cities</h2>
         <h4 class="ui header aligned center">Local Rounds will take place in <span style="color:#51bcea">16</span> cities across Europe and Turkey.</h4>
-        <!--<div class="ui ec-blue ec-blue inverted three item menu">-->
-            <!--<a class="item active" data-target="#organizers">-->
-                <!--<i class="users icon"></i>Organizers</a>-->
-            <!--<a class="item" data-target="#jury">-->
-                <!--<i class="star icon"></i>Jury</a>-->
-            <!--<a class="item" data-target="#ambassadors">-->
-                <!--<i class="announcement icon"></i>Ambassadors</a>-->
-        <!--</div>-->
         <div class="ui people container mt-4" id="cities">
 
-            <div class="ui four stackable cards">
+            <div class="ui four link stackable cards">
                 <div class="ui card">
                     <div class="image">
                         <img src="assets/images/lc/jlc-almeria.jpg">
@@ -387,5 +384,54 @@
                 </p>
             </div>
         </div>
+        </div>
+          <div class="aligned center ui five stackable link cards mt-4">
+            <div class="card" ng-click="milica()">
+                <div class="image">
+                    <img src="assets/images/people/boardPics/milica.png">
+                </div>
+                <div class="content">
+                    <div class="header">Milica Stefanović</div>
+                    <div class="meta"><b>Team Leader</b>| <a href="mailto:ec-leader@eestec.net">Contact</a></div>
+                </div>
+            </div>
+            <div class="card" ng-click="ema()">
+              <div class="image">
+                  <img src="assets/images/people/boardPics/ema.png">
+              </div>
+              <div class="content">
+                  <div class="header">Ema Ninic</div>
+                  <div class="meta"><b>Ambassadors</b>| <a href="mailto:ec-ambassadors@eestec.net">Contact</a></div>
+              </div>
+            </div>
+            <div class="card" ng-click="damir()">
+              <div class="image">
+                  <img src="assets/images/people/boardPics/damir.png">
+              </div>
+              <div class="content">
+                  <div class="header">Damir Kovačević</div>
+                  <div class="meta"><b>Fund Raising</b>| <a href="mailto:ec-fr@eestec.net">Contact</a></div>
+              </div>
+            </div>
+            <div class="card" ng-click="marta()">
+              <div class="image">
+                  <img src="assets/images/people/boardPics/marta.png">
+              </div>
+              <div class="content">
+                  <div class="header">Marta Błaszczyk</div>
+                  <div class="meta"><b>Public Relations</b>| <a href="mailto:ec-pr@eestec.net">Contact</a></div>
+              </div>
+            </div>
+            <div class="card" ng-click="melina()">
+              <div class="image">
+                <img src="assets/images/people/boardPics/melina.png">
+              </div>
+              <div class="content">
+                <div class="header">Melina Tourni</div>
+                <div class="meta"><b>Online Seminars</b>| <a href="mailto:ec-os@eestec.net">Contact</a></div>
+              </div>
+            </div>
     </div>
-</section>
+        </section>
+
+    </div>

@@ -1,6 +1,8 @@
 angular.module('ecaApp')
 .controller ('loginController', ['$scope', '$rootScope', '$state', 'User',
-	function($scope, $rootScope, $state, User){
+	function($scope, $rootScope, $state, User) {
+
+
 
 	$scope.submitted = false;
 
@@ -11,7 +13,7 @@ angular.module('ecaApp')
 
 	$scope.login = function() {
 		$scope.submitted = true;
-		if ($scope.loginForm.$valid){
+		if ($scope.loginForm.$valid) {
 	        User.login($scope.email, $scope.password, true)
 	            .then(function ok(user) {
 					$rootScope.loggedin = true;
@@ -22,5 +24,17 @@ angular.module('ecaApp')
 	            })
 		}
     };
+
+	$scope.init = function () {
+		User.checkAuth().then(
+				function authed() {
+						//return to profile page
+						$state.go('authed.team');
+				},
+				function notAuthed() {
+						// ok!
+				}
+			);
+	};
 
 }])

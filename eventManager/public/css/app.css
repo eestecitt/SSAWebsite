@@ -15,12 +15,24 @@
   color: #ffffff;
 }
 
-#eestec {
-  text-align: justify;
-  text-justify: inter-word;
+.column.ui.card.member {
+  margin: 0.5rem;
 }
 
-#register {
+#eestec, #about {
+  text-align: center;
+}
+
+#eestec {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#about {
+  padding: 2rem;
+}
+
+#register, #team {
   /*background-color: #3679bd;*/
   padding: 1% 15.5%;
   font-size: 145%;
@@ -30,11 +42,11 @@
   background-color: #ffffff;
 }
 
-#register:visited {
+#register:visited, #team:visited {
   background-color: #3679bd;
 }
 
-#register:hover {
+#register:hover, #team:hover {
   background-color: #51bcea;
 }
 

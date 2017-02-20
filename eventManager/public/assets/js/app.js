@@ -40,6 +40,20 @@ angular.module('ecaApp', [
             }
         ];
 
+        var absolutelyNoAuth = ['$stateParams', '$state', 'User',
+            function($stateParams, $state, User) {
+                User.checkAuth().then(
+                    function authed() {
+                        //return to profile page
+                        $state.go('authed.team');
+                    },
+                    function notAuthed() {
+                        // ok!
+                    }
+                )
+            }
+        ];
+
         var requireAdmin = ['$stateParams', '$state', 'User',
             function($stateParams, $state, User) {
                 User.checkAuth().then(
@@ -80,12 +94,12 @@ angular.module('ecaApp', [
             .state('login', {
                 url: '/login',
                 templateUrl: 'templates/login.html',
-                onEnter: requireNoAuth
+                onEnter: absolutelyNoAuth
             })
             .state('register', {
                 url: '/register',
                 templateUrl: 'templates/register.html',
-                onEnter: requireNoAuth
+                onEnter: absolutelyNoAuth
             })
             .state('authed', {
                 abstract: true,

@@ -26,7 +26,12 @@ angular.module('ecaApp')
                     $scope.team = response;
                     console.log(response);
                     $rootScope.teamName = $scope.team.name;
-                    $rootScope.lcName = $scope.team.lc.name;
+                    if ($scope.team.lc) {
+                      $rootScope.lcName = $scope.team.lc.name;
+                    } else {
+                      $rootScope.lcName = "Waikiki";
+                    }
+
                 });
             else
                 $rootScope.teamName = '?';
