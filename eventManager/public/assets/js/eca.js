@@ -24,6 +24,10 @@ function getCookie(cname) {
 			$menuToggle.trigger('click');
 		});
 
+		$('.special.cards .image').dimmer({
+			on: 'hover'
+		});
+
 		// Enable dropdown
 		$('.ui.dropdown').dropdown();
 
