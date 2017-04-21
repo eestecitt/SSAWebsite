@@ -15,6 +15,16 @@
   color: #ffffff;
 }
 
+.ui.button.dimmerB {
+  background-color: transparent;
+  color: white;
+}
+
+.ui.button.dimmerB:hover {
+  background-color: white;
+  color: black;
+}
+
 .column.ui.card.member {
   margin: 0.5rem;
 }
@@ -34,8 +44,11 @@
 
 #register, #team {
   /*background-color: #3679bd;*/
-  padding: 1% 15.5%;
+  /*padding: 1% 15.5%;
   font-size: 145%;
+  */
+  /*padding: 1rem 10rem;
+  font-size: 1.5rem;*/
 }
 
 #home {

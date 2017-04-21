@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 
 class LC extends Model
 {
-  protected $fillable = ['name'];
+  protected $fillable = ['name', 'email', 'fb_page', 'description', 'roundType', 'announcement', 'picturePath'];
   protected $table = 'l_cs';
   public $timestamps = false;
 

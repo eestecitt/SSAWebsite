@@ -37,8 +37,7 @@ class Member extends Model implements AuthenticatableContract,
       'tshirt',
       'cv',
       'city',
-      'activated',
-      'hasCV'
+      'activated'
     ];
 
     protected $casts = [
@@ -46,6 +45,11 @@ class Member extends Model implements AuthenticatableContract,
         'hasCV' => 'boolean',
         'ambassador' => 'boolean'
     ];
+
+    public function getHasCVAttribute()
+    {
+      return (boolean) $this->cv;
+    }
 
     /**
      * Get the group where this member participates.
@@ -63,6 +67,11 @@ class Member extends Model implements AuthenticatableContract,
     public function getLcAttribute()
     {
       return $this->group->lc;
+    }
+
+    public function getFull_nameAttribute()
+    {
+      return $this->first_name." ".$this->last_name;
     }
 
 }

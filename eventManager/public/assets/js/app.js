@@ -86,6 +86,11 @@ angular.module('ecaApp', [
 				templateUrl: 'templates/faq.html',
 				onEnter: requireNoAuth
 			})
+      .state('sponsors', {
+        url: '/sponsors',
+        templateUrl: 'templates/sponsors.html',
+        onEnter: requireNoAuth
+      })
             .state('terms', {
 				url: '/terms',
 				templateUrl: 'templates/terms.html',

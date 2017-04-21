@@ -30,7 +30,7 @@
                     <div class="right small menu">
                         <a ui-sref="home" class="item">Home</a>
                         <a ng-click="scrollTo('cities')" class="item">Cities</a>
-                        <a ng-click="scrollTo('sponsors')" class="item">Sponsors</a>
+                        <a ui-sref="sponsors" class="item">Sponsors</a>
                         <a href="http://blog-eestechchallenge.eestec.net/" class="item">Online Seminars</a>
                         <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
                         <a ui-sref="faq" class="item">FAQ</a>
@@ -81,6 +81,7 @@
                     <div class="ui inverted ec-blue vertical navbar menu hidden fluid">
                         <a ui-sref="home" class="item">Home</a>
                         <a ng-click="scrollTo('cities')" class="item">Cities</a>
+                        <a ui-sref="sponsors" class="item">Sponsors</a>
                         <a href="http://blog-eestechchallenge.eestec.net/" class="item">Online Seminars</a>
                         <a ui-sref="faq" class="item">FAQ</a>
                         <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
@@ -100,7 +101,7 @@
                         <div class="ui inverted link list">
                             <a ui-sref="home" class="item">Home</a>
                             <a ng-click="scrollTo('cities')" class="item">Cities</a>
-                            <a ng-click="scrollTo('sponsors')" class="item">Sponsors</a>
+                            <a ui-sref="sponsors" class="item">Sponsors</a>
                             <a href="http://blog-eestechchallenge.eestec.net" class="item">Online Seminars</a>
                             <a ui-sref="faq" class="item">FAQ</a>
                             <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>

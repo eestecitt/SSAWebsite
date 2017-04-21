@@ -22,7 +22,7 @@
           <td><a href="/admin/showLC/{{ $lc->id }}">{{ $lc->name }}</a></td>
           <td>
             @if ($lc->ambassador)
-              {{$lc->ambassador->first_name}}
+              {{$lc->ambassador->first_name}} {{$lc->ambassador->last_name}}
             @else
               No ambassador!
             @endif

@@ -70,6 +70,52 @@ angular.module('ecaApp')
             $('#edit-user-modal').modal('show');
         }
 
+        $scope.newFile = function () {
+          var f = document.getElementById('file').files[0],
+          r = new FileReader();
+          r.onloadend = function(e){
+            var data = e.target.result;
+            //send your binary data via $http or $resource or do anything else with it
+          }
+          r.readAsBinaryString(f);
+        }
+
+        // File update
+        var fileExtentionRange = '.pdf';
+        var MAX_SIZE = 30; // MB
+
+        $(document).on('change', '.btn-file', function() {
+            var input = $(this);
+
+            if (navigator.appVersion.indexOf("MSIE") != -1) { // IE
+                var label = input.val();
+                var id = input.attr('id');
+                validateFile(id, label, 0);
+            } else {
+                var label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                var size = input.get(0).files[0].size;
+                var id = input.attr('id');
+                validateFile(id, label, size);
+            }
+        });
+
+        function validateFile(id, l, s) {
+            var postfix = l.substr(l.lastIndexOf('.'));
+            if (fileExtentionRange.indexOf(postfix.toLowerCase()) > -1) {
+                if (s > 1024 * 1024 * MAX_SIZE ) {
+                    alert('Max size for file is ' + MAX_SIZE);
+                    $('#'+id).val('');
+                    $('._'+id).val('');
+                } else {
+                    $('._'+id).val(l);
+                }
+            } else {
+                alert('File type must be ' + fileExtentionRange);
+                $('#'+id).val('');
+                $('._'+id).val('');
+            }
+        }
+
     }
 
 ])
