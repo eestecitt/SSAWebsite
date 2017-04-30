@@ -83,7 +83,7 @@ function($scope, $rootScope, $state, $location, $anchorScroll, User, API, $windo
   }
 
   $scope.ema = function() {
-    //$window.open("https://rs.linkedin.com/in/milica-stefanović-21a85b92");
+    $window.open("https://www.linkedin.com/in/ema-ninic/");
   }
 
   $scope.melina = function() {
