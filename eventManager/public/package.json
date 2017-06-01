@@ -1,8 +1,0 @@
-{
-	"name": "eca-frontend",
-	"version": "1.0.0",
-	"description": "EESTEC Competition for Android",
-	"devDependencies": {
-		"semantic-ui": "^2.1.6"
-	}
-}
