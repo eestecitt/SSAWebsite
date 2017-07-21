@@ -1,3 +1,11 @@
 backup/
 .idea/
 *.iml
+/vendor
+/node_modules
+composer.lock
+.vagrant
+.env
+.DS_Store
+.otto
+.ottoid

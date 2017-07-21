@@ -8,11 +8,11 @@ keys:
 folders:
     -
         map: .
-        to: /home/vagrant/Code/eventManager
+        to: /home/vagrant/Code/
 sites:
     -
         map: eestechchallenge.app
-        to: /home/vagrant/Code/eventManager/public
+        to: /home/vagrant/Code/public
 databases:
     - homestead
 name: eestechchallenge

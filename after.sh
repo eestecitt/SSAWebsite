@@ -4,5 +4,5 @@
 # add any commands you wish to this file and they will
 # be run after the Homestead machine is provisioned.
 
-cd Code/eventManager
+cd Code
 composer install
