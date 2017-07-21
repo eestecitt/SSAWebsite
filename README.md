@@ -1,10 +1,13 @@
 # PLEEM
 PHP Laravel EESTEC Event Manager, focusing the EESTech Challenge (https://eestechchallenge.eestec.net)
 
-## The below links may contain outdated information!!!
+## How to set it up
 
-### Documentation  
-[PLEEM Wiki](https://github.com/jirojo2/pleem/wiki/Home/)  
+### Local Environment
+Everything will run inside a virtual machine on your machine, with all dependencies and tools encapsulated in that machine. We use Vagrant to manage the virtual machine. Depending on your machine the following steps to pull the project and set up for local development may take several minutes.
 
-### E-R Model Diagram  
-![E-R Model Diagram](https://raw.githubusercontent.com/jirojo2/pleem/master/doc/diagrams/pleem-er.png)
+#### Debian/Ubuntu
+```sudo apt-get install git virtualbox vagrant
+vagrant plugin install vagrant-reload
+git clone https://github.com/eestecitt/EESTechChallengePlatform.git
+vagrant up```

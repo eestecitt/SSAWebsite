@@ -1,7 +1,6 @@
 /vendor
 /node_modules
-Homestead.yaml
-Homestead.json
+.vagrant
 .env
 .DS_Store
 .otto
