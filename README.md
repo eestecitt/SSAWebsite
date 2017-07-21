@@ -10,4 +10,5 @@ Everything will run inside a virtual machine on your machine, with all dependenc
 ```sudo apt-get install git virtualbox vagrant
 vagrant plugin install vagrant-reload
 git clone https://github.com/eestecitt/EESTechChallengePlatform.git
+cd EESTechChallengePlatform
 vagrant up
