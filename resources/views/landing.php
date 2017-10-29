@@ -6,11 +6,11 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="EESTech Challenge is an international project that aims to gather machine learning enthusiast from all over the Europe.">
+        <meta name="description" content="EESTech Challenge is a brand new competition organized by EESTEC, that has the aim to create opportunities for European students to gain knowledge in the field of EECS and develop a professional network.">
         <meta property="og:image" content="assets/images/ec-big-logo.png" />
 
         <!-- Site Properities -->
-        <title>EESTech Challenge 2016-2017</title>
+        <title>EESTech Challenge 2017-2018</title>
 
         <link rel="icon" type="image/png" href="assets/images/favicon_ec.png" />
         <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
@@ -29,12 +29,13 @@
                     </a>
                     <div class="right small menu">
                         <a ui-sref="home" class="item">Home</a>
-                        <a ng-click="scrollTo('cities')" class="item">Cities</a>
-                        <a ui-sref="sponsors" class="item">Sponsors</a>
+                        <!--<a ng-click="scrollTo('cities')" class="item">Cities</a>-->
+                        <!--<a ui-sref="sponsors" class="item">Sponsors</a>-->
                         <a href="http://blog-eestechchallenge.eestec.net/" class="item">Online Seminars</a>
-                        <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
+                      <!--  <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>-->
                         <a ui-sref="faq" class="item">FAQ</a>
                         <a ng-click="scrollTo('contact')" class="item">Contact</a>
+                        <!--
                         <div class="item" ng-show="!loggedin">
                             <a ui-sref="login" class="ui ec-blue button">
                                 <i class="user icon"></i> Log in
@@ -50,13 +51,14 @@
 									<i class="log out icon"></i> Log out
 								</a>
 							</div>
-						</div>
+						</div>-->
                     </div>
                 </div>
                 <div class="ui mobile only row">
                     <a ui-sref="home" class="header item">
                         <img class="ui small fluid image" src="assets/images/ec-logo.png">
                     </a>
+                    <!--
                     <div class="right menu open">
                         <div class="item" ng-show="!loggedin">
                             <a ui-sref="login" class="ui ec-blue button">
@@ -73,15 +75,15 @@
 									<i class="log out icon"></i> Log out
 								</a>
 							</div>
-						</div>
+						</div>-->
                         <a class="toggle item">
                             <i class="ec-blue sidebar icon"></i>
                         </a>
                     </div>
                     <div class="ui inverted ec-blue vertical navbar menu hidden fluid">
                         <a ui-sref="home" class="item">Home</a>
-                        <a ng-click="scrollTo('cities')" class="item">Cities</a>
-                        <a ui-sref="sponsors" class="item">Sponsors</a>
+                        <!--<a ng-click="scrollTo('cities')" class="item">Cities</a>-->
+                        <!--<a ui-sref="sponsors" class="item">Sponsors</a>-->
                         <a href="http://blog-eestechchallenge.eestec.net/" class="item">Online Seminars</a>
                         <a ui-sref="faq" class="item">FAQ</a>
                         <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
@@ -100,8 +102,8 @@
                         <h4 class="ui invertedheader">Overview</h4>
                         <div class="ui inverted link list">
                             <a ui-sref="home" class="item">Home</a>
-                            <a ng-click="scrollTo('cities')" class="item">Cities</a>
-                            <a ui-sref="sponsors" class="item">Sponsors</a>
+                            <!--<a ng-click="scrollTo('cities')" class="item">Cities</a>-->
+                            <!--<a ui-sref="sponsors" class="item">Sponsors</a>-->
                             <a href="http://blog-eestechchallenge.eestec.net" class="item">Online Seminars</a>
                             <a ui-sref="faq" class="item">FAQ</a>
                             <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
@@ -147,7 +149,7 @@
                 </div>
                 <div class="ui inverted section divider"></div>
                 <div class="ui horizontal center aligned inverted small container">
-                    <span>&copy; 2016 <a href="http://www.eestec.net" target="_blank">EESTEC International</a></span>
+                    <span>&copy; 2017 <a href="http://www.eestec.net" target="_blank">EESTEC International</a></span>
                 </div>
             </div>
         </div>
