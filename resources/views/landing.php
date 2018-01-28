@@ -6,13 +6,13 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="EESTech Challenge is a brand new competition organized by EESTEC, that has the aim to create opportunities for European students to gain knowledge in the field of EECS and develop a professional network.">
+        <meta name="description" content="EESTEC Soft Skills Academy (SSA) is an international project organized by Electrical Engineering STudents’ European assoCiation (EESTEC).">
         <meta property="og:image" content="assets/images/ec-big-logo.png" />
 
         <!-- Site Properities -->
         <title>EESTEC Soft Skills Academy</title>
 
-        <link rel="icon" type="image/png" href="assets/images/favicon_ec.png" />
+        <link rel="icon" type="image/png" href="favicon.ico" />
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
         <link rel="stylesheet" type="text/css" href="assets/lib/content-tools/content-tools.min.css">
@@ -26,11 +26,12 @@
         <div class="ui top fixed menu">
             <div class="ui grid container">
                 <div class="ui computer tablet only row">
-                    <a ui-sref="home" class="header down item">
+                    <a ui-sref="home" class="header down borderless item">
                         <img class="ui tiny fluid image" src="assets/images/logo_ssa.jpg">
                     </a>
+                    <h1 class="ui ssa-dark left huge header borderless item">EESTEC Soft Skills Academy</h1>
                     <div class="right small menu">
-                        <a ui-sref="home" class="item">Home</a>
+                        <a ui-sref="home" class="borderless item">Home</a>
                         <!--<a ng-click="scrollTo('cities')" class="item">Cities</a>-->
                         <a ui-sref="sponsors" class="item">Sponsors</a>
                         <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
@@ -55,9 +56,10 @@
                     </div>
                 </div>
                 <div class="ui mobile only row">
-                    <a ui-sref="home" class="header item">
+                    <a ui-sref="home" class="header borderless item">
                         <img class="ui tiny fluid image" src="assets/images/logo_ssa.jpg">
                     </a>
+                    <h1 class="ui ssa-dark left huge header borderless item">EESTEC Soft Skills Academy</h1>
                     <!--
                     <div class="right menu open">
                         <div class="item" ng-show="!loggedin">
@@ -76,7 +78,7 @@
 								</a>
 							</div>
 						</div>-->
-                        <a class="toggle item">
+                        <a class="toggle right item">
                             <i class="ec-blue sidebar icon"></i>
                         </a>
                     </div>

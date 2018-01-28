@@ -31,7 +31,8 @@ img {
 }
 
 #vision {
-  color: #1C1143;
+  /*color: #1C1143;*/
+  color: #6F2864
 }
 
 /* My changes Christos here*/
@@ -98,7 +99,9 @@ img {
   display: none;
 }
 
-
+.ui.ssa-dark {
+  color: #1C1143;
+}
 
 /* ec-blue */
 

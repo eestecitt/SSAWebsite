@@ -1,47 +1,50 @@
-<section class="ui center aligned segment" id="home">
-  <div class="ui content container">
-    <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Athens2016_2.jpg">
-    <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Athens2016.jpg">
-    <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Belgrade2016_2.jpg">
-    <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Belgrade2016_3.jpg">
-    <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Belgrade2016.jpg">
-    <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Thessaloniki2017_2.jpg">
-    <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Thessaloniki2017.jpg">
-    <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Tuzla2017.jpg">
-    <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Xanthi2017.jpg">
-    <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Xanthi2017_2.jpg">
-    <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+<section class="ui raised padded center aligned segments" >
+  <div class="ui center aligned basic segment" id="home">
+    <div class="ui content container">
+      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Athens2016_2.jpg">
+      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Athens2016.jpg">
+      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Belgrade2016_2.jpg">
+      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Belgrade2016_3.jpg">
+      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Belgrade2016.jpg">
+      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Thessaloniki2017_2.jpg">
+      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Thessaloniki2017.jpg">
+      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Tuzla2017.jpg">
+      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Xanthi2017.jpg">
+      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Xanthi2017_2.jpg">
+      <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+      <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+    </div>
+    <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+    }
+  </script>
+</div>
+  <div class="ui center aligned segment" >
+    <div class="ui content container" >
+    <h1 classs="ui dividing header" id="vision">We envision a Europe where youth hold the power to develop their soft skills in order to reach the full potential in their social and professional lives.</h1>
+    <p>EESTEC Soft Skills Academy (SSA) is an international project organized by Electrical Engineering STudents’ European assoCiation (EESTEC). The project is formed to be divided in two parts: the international and the local part. The local part consists of EESTEC Commitments organizing events named SSA in different European cities. The international part is a team responsible for making sure the events are following standards and to facilitate the collaboration and communication between local events.
+  SSA provides a unique opportunity for further development of ambitious students with assets of non-formal education. These assets, will be expected from them in their future working place. Every local event provides trainings in certain topics of soft skills (personal and social skills). These trainings are held by certified EESTEC trainers, HR representatives of companies and other experts in the field of soft skills. In the end, participants are provided with CV supplements. There is no participation fee and every SSA is open towards all students.
+  </p>
+    </div>
   </div>
-  <script>
-  var slideIndex = 1;
-  showDivs(slideIndex);
-
-  function plusDivs(n) {
-      showDivs(slideIndex += n);
-  }
-
-  function showDivs(n) {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      if (n > x.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = x.length} ;
-      for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-      }
-      x[slideIndex-1].style.display = "block";
-  }
-</script>
 </section>
 
-<section class="ui raised padded center aligned segment" >
-  <div class="ui content container" >
-  <h1 classs="ui dividing header" id="vision">We envision a Europe where youth hold the power to develop their soft skills in order to reach the full potential in their social and professional lives.</h1>
-  <p>EESTEC Soft Skills Academy (SSA) is an international project organized by Electrical Engineering STudents’ European assoCiation (EESTEC). The project is formed to be divided in two parts: the international and the local part. The local part consists of EESTEC Commitments organizing events named SSA in different European cities. The international part is a team responsible for making sure the events are following standards and to facilitate the collaboration and communication between local events.
-SSA provides a unique opportunity for further development of ambitious students with assets of non-formal education. These assets, will be expected from them in their future working place. Every local event provides trainings in certain topics of soft skills (personal and social skills). These trainings are held by certified EESTEC trainers, HR representatives of companies and other experts in the field of soft skills. In the end, participants are provided with CV supplements. There is no participation fee and every SSA is open towards all students.
-</p>
-  </div>
-</section>
+
 
 <section class="ui basic segment" id="eestec">
 <div class="ui content container">
