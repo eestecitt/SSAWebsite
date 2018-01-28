@@ -1,13 +1,37 @@
 * {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .ui.header, .ui.message .header {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .ui.card>.content>.header, .ui.cards>.card>.content>.header:not(.ui) {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+
+#slides_control > div {
+  height: 200px;
+}
+img {
+  margin:auto;
+  width: 400px;
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+  margin-left:-200px;
+}
+
+#home {
+  margin-top: 8rem;
+}
+
+#vision {
+  color: #1C1143;
 }
 
 /* My changes Christos here*/
@@ -83,7 +107,7 @@
 }
 
 .ui.inverted.ec-blue.segment {
-  background-color: #51bcea !important;
+  background-color: #D6706A !important;
   color: #ffffff !important;
 }
 

@@ -1,6 +1,6 @@
 angular.module('ecaApp')
 .controller ('LandingLayoutController', ['$scope', '$rootScope', '$state', '$location', '$anchorScroll', 'User', 'API', '$window',
-function($scope, $rootScope, $state, $location, $anchorScroll, User, API, $window){
+function($scope, $rootScope, $state, $location, $anchorScroll, User, API, $window) {
 
     $rootScope.loggedin = false;
 
@@ -79,22 +79,18 @@ function($scope, $rootScope, $state, $location, $anchorScroll, User, API, $windo
 	}
 
   $scope.milica = function() {
-    $window.open("https://www.linkedin.com/in/elenaxanthi/");
+    $window.open("https://www.linkedin.com/in/marko-mladenovi%C4%87-128386a6/");
   }
 
   $scope.ema = function() {
-    $window.open("https://www.linkedin.com/in/giorgos-siachamis-43954914b/");
-  }
-
-  $scope.melina = function() {
-    $window.open("https://www.linkedin.com/in/georgedaniil");
+    $window.open("https://www.linkedin.com/in/mariana-averkiadou-64ba29112/");
   }
 
   $scope.damir = function() {
-    $window.open("https://www.linkedin.com/in/boban-poznanovic/");
+    $window.open("https://www.linkedin.com/in/ana-panteli%C4%87-661029121/");
   }
 
   $scope.marta = function() {
-    $window.open("https://www.linkedin.com/in/tijana-stanojkovi%C4%87-89505b134/");
+    $window.open("https://www.linkedin.com/in/leonidas-avdelas-859bb4111/");
   }
 }])
