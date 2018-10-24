@@ -1,89 +1,117 @@
-<section class="ui raised padded center aligned segments" >
-  <div class="ui center aligned basic segment" id="home">
-    <div class="ui content container">
-      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Athens2016_2.jpg">
-      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Athens2016.jpg">
-      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Belgrade2016_2.jpg">
-      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Belgrade2016_3.jpg">
-      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Belgrade2016.jpg">
-      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Thessaloniki2017_2.jpg">
-      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Thessaloniki2017.jpg">
-      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Tuzla2017.jpg">
-      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Xanthi2017.jpg">
-      <img class="ui centered big image mySlides w3-animate-fading" src="assets/images/carousel/Xanthi2017_2.jpg">
-      <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-      <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
-    </div>
-    <script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
+<section class="ui raised padded center aligned segments">
+    <div class="ui center aligned basic segment" id="home">
+        <div class="ui content container">
+            <img class="ui centered big image mySlides w3-animate-right" src="assets/images/carousel/Athens2016_2.jpg">
+            <img class="ui centered big image mySlides w3-animate-right" src="assets/images/carousel/Athens2016.jpg">
+            <img class="ui centered big image mySlides w3-animate-right" src="assets/images/carousel/Belgrade2016_2.jpg">
+            <img class="ui centered big image mySlides w3-animate-right" src="assets/images/carousel/Belgrade2016_3.jpg">
+            <img class="ui centered big image mySlides w3-animate-right" src="assets/images/carousel/Belgrade2016.jpg">
+            <img class="ui centered big image mySlides w3-animate-right" src="assets/images/carousel/Thessaloniki2017_2.jpg">
+            <img class="ui centered big image mySlides w3-animate-right" src="assets/images/carousel/Thessaloniki2017.jpg">
+            <img class="ui centered big image mySlides w3-animate-right" src="assets/images/carousel/Tuzla2017.jpg">
+            <img class="ui centered big image mySlides w3-animate-right" src="assets/images/carousel/Xanthi2017.jpg">
+            <img class="ui centered big image mySlides w3-animate-right" src="assets/images/carousel/Xanthi2017_2.jpg">
+            <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+        </div>
+        <script>
 
-    function plusDivs(n) {
-        showDivs(slideIndex += n);
-    }
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
 
-    function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length} ;
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        x[slideIndex-1].style.display = "block";
-    }
-  </script>
-</div>
-  <div class="ui center aligned segment" >
-    <div class="ui content container" >
-    <h1 classs="ui dividing header" id="vision">We envision a Europe where youth hold the power to develop their soft skills in order to reach the full potential in their social and professional lives.</h1>
-    <p>EESTEC Soft Skills Academy (SSA) is an international project organized by Electrical Engineering STudents’ European assoCiation (EESTEC). The project is formed to be divided in two parts: the international and the local part. The local part consists of EESTEC Commitments organizing events named SSA in different European cities. The international part is a team responsible for making sure the events are following standards and to facilitate the collaboration and communication between local events.
-  SSA provides a unique opportunity for further development of ambitious students with assets of non-formal education. These assets, will be expected from them in their future working place. Every local event provides trainings in certain topics of soft skills (personal and social skills). These trainings are held by certified EESTEC trainers, HR representatives of companies and other experts in the field of soft skills. In the end, participants are provided with CV supplements. There is no participation fee and every SSA is open towards all students.
-  </p>
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = x.length };
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex - 1].style.display = "block";
+            }
+
+            var slideIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > x.length) { slideIndex = 1 }
+                x[slideIndex - 1].style.display = "block";
+                setTimeout(carousel, 4000); // Change image every 4 seconds
+            }
+        </script>
     </div>
-  </div>
+    <div class="ui center aligned segment">
+        <div class="ui content container">
+            <h1 classs="ui dividing header" id="vision">We envision a Europe where youth hold the power to develop
+                their soft skills in order to reach the full potential in their social and professional lives.</h1>
+            <p>EESTEC Soft Skills Academy (SSA) is an international project organized by Electrical Engineering
+                STudents’ European assoCiation (EESTEC). The project is formed to be divided in two parts: the
+                international and the local part. The local part consists of EESTEC Commitments organizing events named
+                SSA in different European cities. The international part is a team responsible for making sure the
+                events are following standards and to facilitate the collaboration and communication between local
+                events.
+                SSA provides a unique opportunity for further development of ambitious students with assets of
+                non-formal education. These assets, will be expected from them in their future working place. Every
+                local event provides trainings in certain topics of soft skills (personal and social skills). These
+                trainings are held by certified EESTEC trainers, HR representatives of companies and other experts in
+                the field of soft skills. In the end, participants are provided with CV supplements. There is no
+                participation fee and every SSA is open towards all students.
+            </p>
+        </div>
+    </div>
 </section>
 
 
 
 <section class="ui basic segment" id="eestec">
-<div class="ui content container">
-  <h1 class="ui header aligned center">About
-      <strong class="ui red header">EESTEC</strong>
-  </h1>
-  <h2 class="ui header aligned center">Electrical Engineering STudents' European assoCiation</h2>
-  <p>
-    Electrical Engineering STudents’ European assoCiation (EESTEC) was founded in Eindhoven in 1986, 
-    aiming to improve students’ international cooperation, as well as enable students from electrical profile 
-    Universities, Institutes and Technical Schools of Europe to cooperate with the industry, participate in competitions, 
-    professional trainings and other forms of professional development. By its nature, EESTEC is an apolitical, 
-    non-governmental and nonprofit students’ organization which brings together students organized into 50 Universities 
-    from 25 Countries. After 32 years of successful development, EESTEC remains one of the strongest students’ networks 
-    in Europe, giving opportunities to young future professionals to improve and upgrade their technical and soft skills.
-  </p>
-  <a href="https://www.eestec.net" target="_blank">
-      <img alt="" class="ui centered large image" src="assets/images/eestec-logo.png">
-  </a>
-</div>
+    <div class="ui content container">
+        <h1 class="ui header aligned center">About
+            <strong class="ui red header">EESTEC</strong>
+        </h1>
+        <h2 class="ui header aligned center">Electrical Engineering STudents' European assoCiation</h2>
+        <p>
+            Electrical Engineering STudents’ European assoCiation (EESTEC) was founded in Eindhoven in 1986,
+            aiming to improve students’ international cooperation, as well as enable students from electrical profile
+            Universities, Institutes and Technical Schools of Europe to cooperate with the industry, participate in
+            competitions,
+            professional trainings and other forms of professional development. By its nature, EESTEC is an apolitical,
+            non-governmental and nonprofit students’ organization which brings together students organized into 50
+            Universities
+            from 25 Countries. After 32 years of successful development, EESTEC remains one of the strongest students’
+            networks
+            in Europe, giving opportunities to young future professionals to improve and upgrade their technical and
+            soft skills.
+        </p>
+        <a href="https://www.eestec.net" target="_blank">
+            <img alt="" class="ui centered large image" src="assets/images/eestec-logo.png">
+        </a>
+    </div>
 </section>
 
 <section class="ui basic segment" id="contact">
-<div class="ui content container">
-    <div class="ui text container">
-        <h1 class="ui header aligned center">Contact Us</h1>
-        <div class="ui icon ec-blue inverted message">
-            <i class="mail outline icon"></i>
-            <div class="content">
-                <div class="header">
-                    Want to get in touch with us?
+    <div class="ui content container">
+        <div class="ui text container">
+            <h1 class="ui header aligned center">Contact Us</h1>
+            <div class="ui icon ec-blue inverted message">
+                <i class="mail outline icon"></i>
+                <div class="content">
+                    <div class="header">
+                        Want to get in touch with us?
+                    </div>
+                    <p>Send us an email at
+                        <a href="mailto:ssa@eestec.net">ssa@eestec.net</a>
+                    </p>
                 </div>
-                <p>Send us an email at
-                    <a href="mailto:ssa@eestec.net">ssa@eestec.net</a>
-                </p>
             </div>
         </div>
-        </div>
-          <div class="aligned center ui three stackable link cards mt-4">
+        <div class="aligned center ui three stackable link cards mt-4">
             <div class="card" ng-click="milica()">
                 <div class="image">
                     <img src="assets/images/people/boardPics/Marianna.jpg">
@@ -94,22 +122,22 @@
                 </div>
             </div>
             <div class="card" ng-click="ema()">
-              <div class="image">
-                  <img src="assets/images/people/boardPics/Mert.jpg">
-              </div>
-              <div class="content">
-                  <div class="header">Mert Yerekapan</div>
-                  <div class="meta"><b>Ambassadors Coordinator</b>| <a href="mailto:ssa-ambassador@eestec.net">Contact</a></div>
-              </div>
+                <div class="image">
+                    <img src="assets/images/people/boardPics/Mert.jpg">
+                </div>
+                <div class="content">
+                    <div class="header">Mert Yerekapan</div>
+                    <div class="meta"><b>Ambassadors Coordinator</b>| <a href="mailto:ssa-ambassador@eestec.net">Contact</a></div>
+                </div>
             </div>
             <div class="card" ng-click="damir()">
-              <div class="image">
-                  <img src="assets/images/people/boardPics/Enes.jpg">
-              </div>
-              <div class="content">
-                  <div class="header">Enes Nuralp</div>
-                  <div class="meta"><b>Public Relations Coordinator</b>| <a href="mailto:ssa-pr@eestec.net">Contact</a></div>
-              </div>
+                <div class="image">
+                    <img src="assets/images/people/boardPics/Enes.jpg">
+                </div>
+                <div class="content">
+                    <div class="header">Enes Nuralp</div>
+                    <div class="meta"><b>Public Relations Coordinator</b>| <a href="mailto:ssa-pr@eestec.net">Contact</a></div>
+                </div>
             </div>
             <!-- <div class="card" ng-click="marta()">
               <div class="image">
@@ -120,7 +148,7 @@
                   <div class="meta"><b>Fund Raising</b>| <a href="mailto:ssa-fr@eestec.net">Contact</a></div>
               </div>
             </div> -->
-    </div>
+        </div>
 </section>
 
 </div>

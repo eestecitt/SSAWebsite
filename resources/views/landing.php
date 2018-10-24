@@ -29,9 +29,9 @@
                     <a ui-sref="home" class="header down borderless item">
                         <img class="ui tiny fluid image" src="assets/images/logo_ssa.jpg">
                     </a>
-                    <h1 class="ui ssa-dark left huge header borderless item">EESTEC Soft Skills Academy</h1>
+                    <h1 class="ui ssa-dark left huge header borderless item hugeFont">EESTEC Soft Skills Academy</h1>
                     <div class="right small menu">
-                        <a ui-sref="home" class="borderless item">Home</a>
+                        <a ng-click="scrollTo('home')" ui-sref="home" class="borderless item">Home</a>
                         <!--<a ng-click="scrollTo('cities')" class="item">Cities</a>-->
                         <a ui-sref="sponsors" class="item">Sponsors</a>
                         <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
@@ -83,7 +83,7 @@
                         </a>
                     </div>
                     <div class="ui inverted ec-blue vertical navbar menu hidden fluid">
-                        <a ui-sref="home" class="item">Home</a>
+                        <a ng-click="scrollTo('home')" ui-sref="home" class="item">Home</a>
                         <!--<a ng-click="scrollTo('cities')" class="item">Cities</a>-->
                         <a ui-sref="sponsors" class="item">Sponsors</a>
                         <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
@@ -101,7 +101,7 @@
                     <div class="five wide column">
                         <h4 class="ui invertedheader">Overview</h4>
                         <div class="ui inverted link list">
-                            <a ui-sref="home" class="item">Home</a>
+                            <a ng-click="scrollTo('home')" ui-sref="home" class="item">Home</a>
                             <!--<a ng-click="scrollTo('cities')" class="item">Cities</a>-->
                             <a ui-sref="sponsors" class="item">Sponsors</a>
                             <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
