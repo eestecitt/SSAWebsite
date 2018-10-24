@@ -79,15 +79,15 @@ function($scope, $rootScope, $state, $location, $anchorScroll, User, API, $windo
 	}
 
   $scope.milica = function() {
-    $window.open("https://www.linkedin.com/in/marko-mladenovi%C4%87-128386a6/");
-  }
-
-  $scope.ema = function() {
     $window.open("https://www.linkedin.com/in/mariana-averkiadou-64ba29112/");
   }
 
+  $scope.ema = function() {
+    $window.open("https://www.linkedin.com/in/mert-y-5002a7126/");
+  }
+
   $scope.damir = function() {
-    $window.open("https://www.linkedin.com/in/ana-panteli%C4%87-661029121/");
+    $window.open("https://www.linkedin.com/in/enes-nuralp1/");
   }
 
   $scope.marta = function() {
