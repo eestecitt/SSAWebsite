@@ -34,7 +34,7 @@
                         <a ng-click="scrollTo('home')" ui-sref="home" class="borderless item">Home</a>
                         <!--<a ng-click="scrollTo('cities')" class="item">Cities</a>-->
                         <a ui-sref="sponsors" class="item">Sponsors</a>
-                        <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
+                        <a ui-sref="eestec" class="item">EESTEC</a>
                         <a ng-click="scrollTo('contact')" class="item">Contact</a>
                         <!--
                         <div class="item" ng-show="!loggedin">
@@ -86,7 +86,7 @@
                         <a ng-click="scrollTo('home')" ui-sref="home" class="item">Home</a>
                         <!--<a ng-click="scrollTo('cities')" class="item">Cities</a>-->
                         <a ui-sref="sponsors" class="item">Sponsors</a>
-                        <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
+                        <a ui-sref="eestec" class="item">EESTEC</a>
                         <a ng-click="scrollTo('contact')" class="item">Contact</a>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
 
         <div ui-view></div>
 
-        <div class="ui ec-blue inverted vertical footer bottom segment row">
+        <div class="ui ec-blue inverted vertical footer bottom segment row" id="footer">
             <div class="ui container">
                 <div class="ui stackable grid">
                     <div class="five wide column">
@@ -104,7 +104,7 @@
                             <a ng-click="scrollTo('home')" ui-sref="home" class="item">Home</a>
                             <!--<a ng-click="scrollTo('cities')" class="item">Cities</a>-->
                             <a ui-sref="sponsors" class="item">Sponsors</a>
-                            <a ng-click="scrollTo('eestec')" class="item">EESTEC</a>
+                            <a ui-sref="eestec" class="item">EESTEC</a>
                             <a ng-click="scrollTo('contact')" class="item">Contact</a>
                         </div>
                     </div>

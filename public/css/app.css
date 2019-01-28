@@ -2,9 +2,14 @@
   font-family: 'Lato', sans-serif;
 }
 
+body {
+  background-color: #fff;
+}
+
 .ui.header, .ui.message .header {
   font-family: 'Lato', sans-serif;
   font-size: 100px;
+  /*color: #fff;*/
 }
 
 .ui.card>.content>.header, .ui.cards>.card>.content>.header:not(.ui) {
@@ -28,7 +33,20 @@ img {
 }
 
 #home {
-  margin-top: 8rem;
+  padding-top: 10rem;
+  /* margin-top: 8rem; */
+}
+
+#carousel {
+  background-image: url("/assets/images/background_gradient.png");
+}
+
+#sponsors {
+  background-image: url("/assets/images/background_gradient.png");
+}
+
+#sponsors .ui.header {
+  color: #fff
 }
 
 #vision {
@@ -60,12 +78,35 @@ img {
 }
 
 #eestec {
-  padding-top: 2rem;
+  /*padding-top: 10rem;*/
+  /* padding-top: 2rem; */
   padding-bottom: 2rem;
 }
 
 #about {
   padding: 2rem;
+}
+
+#contact {
+  padding-top: 10rem;
+  background-image: url("/assets/images/background_gradient.png");
+}
+
+#contact .ui.header {
+  color: #fff
+}
+
+#footer {
+  background-color: #fff;
+  color: #000;
+}
+
+#footer a {
+  color: #000;
+}
+
+#footer h4 {
+  color: #000;
 }
 
 #register, #team {
@@ -75,10 +116,6 @@ img {
   */
   /*padding: 1rem 10rem;
   font-size: 1.5rem;*/
-}
-
-#home {
-  background-color: #ffffff;
 }
 
 #register:visited, #team:visited {
@@ -112,8 +149,8 @@ img {
 }
 
 .ui.inverted.ec-blue.segment {
-  background-color: #D6706A !important;
-  color: #ffffff !important;
+  background-color: #fff;
+  color: #ffffff;
 }
 
 .ui.ec-blue.buttons .button,
@@ -293,11 +330,11 @@ img {
 
 .ui.ec-blue.message {
   background-color: rgba(32, 74, 92, 0.1);
-  color: black;
+  color: #fff;
 }
 
 .ui.ec-blue.message .header {
-  color: black;
+  color: fff;
 }
 
 /*quote*/
